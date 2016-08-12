@@ -22,19 +22,29 @@
 					callback.call(self, e);
 				});
 			},
-			addMarker: function(lat, lng, draggable) {
-				// draggable is additional functionality here...
-				this._createMarker(lat, lng, draggable);
+			addMarker: function(opts) {
+				opts.position = {
+					lat: opts.lat,
+					lng: opts.lng
+				}
+				this._createMarker(opts);
 			},
-        	_createMarker: function(lat, lng, draggable) {
-				var opts = {
-					position: {
-						lat: lat,
-						lng: lng
-					},
-					draggable: draggable,
-					map: this.gMap
-				};
+		// for 	map.addMarker(50.059492, 19.935369, true); in script.js would be:
+		//
+        //	_createMarker: function(lat, lng, draggable) {
+		//		var opts = {
+		//			position: {
+		//				lat: lat,
+		//				lng: lng
+		//			},
+		//			draggable: draggable,
+		//			map: this.gMap
+		//		};
+		//
+		//  and for the current version is:
+		//
+		_createMarker: function(opts) {
+			opts.map = this.gMap;
 				return new google.maps.Marker(opts);
 			}		
 		};		
