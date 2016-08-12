@@ -17,13 +17,14 @@
     // });
 	
 	// the same with my-project-lib.js:
-	map._on('click', function(){
-		alert('click!');
-	});
 	
-	map._on('dragend', function(){
-		alert('done dragging!');
-	});
+	// map._on('click', function(){
+	//	alert('click!');
+	//  });
+	
+	// map._on('dragend', function(){
+	// 	alert('done dragging!');
+	// });
 	
 	// markers:
 	//
@@ -36,9 +37,24 @@
 	//	icon: 'https://mapicons.mapsmarker.com/wp-content/uploads/mapicons/shape-default/color-ff8a22/shapecolor-color/shadow-1/border-dark/symbolstyle-white/symbolshadowstyle-dark/gradient-no/kanzeldach.png'
 	// });
 	// with my-project-lib.js:
-	map.addMarker(50.059492, 19.935369, true); // true = draggable
-	map.addMarker(50.059221, 19.939084, true);
-	map.addMarker(50.058546, 19.936856, true);
+	map.addMarker({
+		lat: 50.059492, 
+		lng: 19.935369, 
+		draggable: true
+		// icon: ...
+		});
+	map.addMarker({
+		lat: 50.059221, 
+		lng: 19.939084, 
+		draggable: true
+		// icon: ...
+		});
+    map.addMarker({
+		lat: 50.058546, 
+		lng: 19.936856, 
+	    draggable: true
+		// icon: ...
+		});
 	
 		
 }(window, /* google, */ window.MyProject || (window.MyProject = {})));
