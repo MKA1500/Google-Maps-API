@@ -1,2 +1,1 @@
-# Google-Maps-API
-JS - test
+# New Maven REST API
